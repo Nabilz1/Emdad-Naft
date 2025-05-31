@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إمداد نفط | Emdad Naft</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #f9f9f9;
+      direction: rtl;
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: #004e92;
+      color: white;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header img {
+      height: 50px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      font-size: 18px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .lang-switch {
+      background: #ff9800;
+      color: white;
+      padding: 5px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .hero {
+      background: url('emdadlogo.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      background: white;
+    }
+
+    section h2 {
+      color: #004e92;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .service-box {
+      background: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    footer {
+      background: #004e92;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    form input, form textarea {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: inherit;
+    }
+
+    form button {
+      background: #ff9800;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="horizontalemdadlogo.png" alt="شعار إمداد نفط" />
+  <nav>
+    <a href="#home" class="nav-home">الرئيسية</a>
+    <a href="#about" class="nav-about">من نحن</a>
+    <a href="#services" class="nav-services">الخدمات</a>
+    <a href="#contact" class="nav-contact">اتصل بنا</a>
+  </nav>
+  <button class="lang-switch" onclick="toggleLang()">English</button>
+</header>
+
+<div class="hero" id="home">
+  <h1 class="hero-title">مرحباً بكم في إمداد نفط</h1>
+  <p class="hero-desc">محطات وقود حديثة داخل جدة وخارجها</p>
+</div>
+
+<section id="about">
+  <h2 class="about-title">من نحن</h2>
+  <p class="about-desc">شركة إمداد نفط هي شركة سعودية رائدة في تشغيل وتطوير محطات الوقود داخل جدة وخارجها. نسعى لتقديم تجربة وقود متكاملة بمعايير جودة عالية وأمان وخدمة عملاء متميزة.</p>
+</section>
+
+<section id="services">
+  <h2 class="services-title">الخدمات</h2>
+  <div class="services">
+    <div class="service-box">تعبئة الوقود</div>
+    <div class="service-box">صيانة سريعة</div>
+    <div class="service-box">ميني ماركت</div>
+    <div class="service-box">دورات مياه نظيفة</div>
+    <div class="service-box">مصلى</div>
+    <div class="service-box">شحن كهربائي (إن وجد)</div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2 class="contact-title">اتصل بنا</h2>
+  <p class="contact-desc">أرسل استفسارك أو تواصلك وسنرد عليك بأقرب وقت.</p>
+  <form>
+    <input type="text" placeholder="الاسم الكامل / Full Name" required />
+    <input type="email" placeholder="البريد الإلكتروني / Email" required />
+    <textarea rows="5" placeholder="رسالتك / Your Message" required></textarea>
+    <button type="submit">إرسال / Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 إمداد نفط - جميع الحقوق محفوظة</p>
+</footer>
+
+<script>
+  let currentLang = 'ar';
+
+  const content = {
+    ar: {
+      nav: ['الرئيسية', 'من نحن', 'الخدمات', 'اتصل بنا'],
+      heroTitle: 'مرحباً بكم في إمداد نفط',
+      heroDesc: 'محطات وقود حديثة داخل جدة وخارجها',
+      aboutTitle: 'من نحن',
+      aboutDesc: 'شركة إمداد نفط هي شركة سعودية رائدة في تشغيل وتطوير محطات الوقود داخل جدة وخارجها. نسعى لتقديم تجربة وقود متكاملة بمعايير جودة عالية وأمان وخدمة عملاء متميزة.',
+      servicesTitle: 'الخدمات',
+      services: ['تعبئة الوقود', 'صيانة سريعة', 'ميني ماركت', 'دورات مياه نظيفة', 'مصلى', 'شحن كهربائي (إن وجد)'],
+      contactTitle: 'اتصل بنا',
+      contactDesc: 'أرسل استفسارك أو تواصلك وسنرد عليك بأقرب وقت.',
+      langBtn: 'English'
+    },
+    en: {
+      nav: ['Home', 'About', 'Services', 'Contact'],
+      heroTitle: 'Welcome to Emdad Naft',
+      heroDesc: 'Modern fuel stations in Jeddah and beyond',
+      aboutTitle: 'About Us',
+      aboutDesc: 'Emdad Naft is a Saudi company specialized in operating and developing fuel stations in and outside Jeddah. We aim to deliver a high-quality, safe, and professional fuel experience.',
+      servicesTitle: 'Our Services',
+      services: ['Fuel Filling', 'Quick Maintenance', 'Mini Market', 'Clean Restrooms', 'Prayer Area', 'EV Charging (if available)'],
+      contactTitle: 'Contact Us',
+      contactDesc: 'Send us your message and we will respond shortly.',
+      langBtn: 'العربية'
+    }
+  };
+
+  function toggleLang() {
+    currentLang = currentLang === 'ar' ? 'en' : 'ar';
+    const lang = content[currentLang];
+
+    document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+
+    document.querySelector('.nav-home').textContent = lang.nav[0];
+    document.querySelector('.nav-about').textContent = lang.nav[1];
+    document.querySelector('.nav-services').textContent = lang.nav[2];
+    document.querySelector('.nav-contact').textContent = lang.nav[3];
+
+    document.querySelector('.hero-title').textContent = lang.heroTitle;
+    document.querySelector('.hero-desc').textContent = lang.heroDesc;
+    document.querySelector('.about-title').textContent = lang.aboutTitle;
+    document.querySelector('.about-desc').textContent = lang.aboutDesc;
+    document.querySelector('.services-title').textContent = lang.servicesTitle;
+
+    const serviceBoxes = document.querySelectorAll('.service-box');
+    serviceBoxes.forEach((el, i) => {
+      el.textContent = lang.services[i] || '';
+    });
+
+    document.querySelector('.contact-title').textContent = lang.contactTitle;
+    document.querySelector('.contact-desc').textContent = lang.contactDesc;
+
+    document.querySelector('.lang-switch').textContent = lang.langBtn;
+  }
+</script>
+
+</body>
+</html>
