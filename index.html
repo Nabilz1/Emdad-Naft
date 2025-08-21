@@ -1,304 +1,179 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>إمداد نفط | Emdad Naft</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إمداد نفط</title>
   <style>
-    /* Global Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Cairo', sans-serif;
-      background: #f9f9f9;
+      background-color: #f9f9f9;
       color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
     }
-
     header {
-      background: #004e92;
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      background: #004080;
       color: #fff;
-      padding: 15px 30px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
+      padding: 15px 50px;
       z-index: 1000;
     }
-
-    header img {
-      height: 50px;
+    header h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
     }
-
-    nav {
+    nav ul {
+      list-style: none;
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
     }
-
-    nav a {
+    nav ul li a {
       color: #fff;
       text-decoration: none;
-      font-size: 18px;
-      transition: 0.3s;
+      font-weight: 500;
+      transition: color 0.3s;
     }
-
-    nav a:hover {
-      color: #ff9800;
+    nav ul li a:hover {
+      color: #FFD700;
     }
-
-    .lang-switch {
-      background: #ff9800;
-      color: white;
-      padding: 8px 16px;
-      border: none;
-      cursor: pointer;
-      border-radius: 25px;
-      transition: 0.3s;
-    }
-
-    .lang-switch:hover {
-      background: #e68900;
-    }
-
-    .hero {
-      background: url('emdadlogo.jpg') no-repeat center/cover;
-      color: white;
+    .banner {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 120px 20px;
-      position: relative;
+      color: #fff;
+      padding: 0 20px;
     }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero h1, .hero p {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      animation: fadeDown 1s ease-out;
-    }
-
-    .hero p {
-      font-size: 20px;
-      animation: fadeUp 1.2s ease-out;
-    }
-
-    @keyframes fadeDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    @keyframes fadeUp {
-      from { transform: translateY(30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    main section {
-      padding: 70px 20px;
-      text-align: center;
-      background: #fff;
-      margin: 20px auto;
-      border-radius: 12px;
-      max-width: 1200px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    section h2 {
-      color: #004e92;
-      font-size: 28px;
-      margin-bottom: 20px;
-    }
-
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .service-box {
-      background: #f1f1f1;
+    .banner h2 {
+      font-size: 48px;
+      background: rgba(0,0,0,0.6);
       padding: 20px;
       border-radius: 10px;
-      transition: 0.3s;
     }
-
-    .service-box:hover {
-      background: #e6f0ff;
-      transform: translateY(-5px);
+    section {
+      padding: 80px 10%;
     }
-
-    form {
-      max-width: 500px;
-      margin: auto;
-      text-align: right;
-    }
-
-    form input, form textarea {
-      width: 100%;
-      padding: 12px;
-      margin-top: 10px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-family: inherit;
-      font-size: 16px;
-    }
-
-    form textarea {
-      resize: none;
-    }
-
-    form button {
-      background: #004e92;
-      color: #fff;
-      border: none;
-      padding: 12px 20px;
-      margin-top: 15px;
-      cursor: pointer;
-      border-radius: 8px;
-      transition: 0.3s;
-      font-size: 16px;
-    }
-
-    form button:hover {
-      background: #003366;
-    }
-
-    footer {
-      background: #004e92;
-      color: #fff;
-      padding: 15px;
+    section h2 {
+      font-size: 32px;
+      color: #004080;
+      margin-bottom: 20px;
       text-align: center;
-      font-size: 14px;
-      margin-top: 40px;
+    }
+    .services, .stations {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .card h3 {
+      color: #004080;
+    }
+    footer {
+      background: #004080;
+      color: #fff;
+      padding: 30px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="horizontalemdadlogo.png" alt="شعار إمداد نفط" />
-  <nav>
-    <a href="#home" class="nav-home">الرئيسية</a>
-    <a href="#about" class="nav-about">من نحن</a>
-    <a href="#services" class="nav-services">الخدمات</a>
-    <a href="#contact" class="nav-contact">اتصل بنا</a>
-  </nav>
-  <button class="lang-switch" onclick="toggleLang()">English</button>
-</header>
+  <!-- Header -->
+  <header>
+    <h1>إمداد نفط</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">عن الشركة</a></li>
+        <li><a href="#services">خدماتنا</a></li>
+        <li><a href="#stations">محطاتنا</a></li>
+        <li><a href="#contact">اتصل بنا</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<div class="hero" id="home">
-  <h1 class="hero-title">مرحباً بكم في إمداد نفط</h1>
-  <p class="hero-desc">محطات وقود حديثة داخل جدة وخارجها</p>
-</div>
-
-<main>
-  <section id="about">
-    <h2 class="about-title">من نحن</h2>
-    <p class="about-desc">شركة إمداد نفط هي شركة سعودية رائدة في تشغيل وتطوير محطات الوقود داخل جدة وخارجها. نسعى لتقديم تجربة وقود متكاملة بمعايير جودة عالية وأمان وخدمة عملاء متميزة.</p>
+  <!-- Banner -->
+  <section class="banner">
+    <h2>مرحباً بكم في شركة إمداد نفط</h2>
   </section>
 
+  <!-- About -->
+  <section id="about">
+    <h2>عن الشركة</h2>
+    <p>
+      شركة <b>إمداد نفط</b> متخصصة في تشغيل وإدارة محطات الوقود وتقديم أفضل الخدمات للعملاء، 
+      مع التزامنا بأعلى معايير الجودة والسلامة في جميع محطاتنا المنتشرة داخل وخارج جدة.
+    </p>
+  </section>
+
+  <!-- Services -->
   <section id="services">
-    <h2 class="services-title">الخدمات</h2>
+    <h2>خدماتنا</h2>
     <div class="services">
-      <div class="service-box">تعبئة الوقود</div>
-      <div class="service-box">صيانة سريعة</div>
-      <div class="service-box">ميني ماركت</div>
-      <div class="service-box">دورات مياه نظيفة</div>
-      <div class="service-box">مصلى</div>
-      <div class="service-box">شحن كهربائي (إن وجد)</div>
+      <div class="card">
+        <h3>خدمات الوقود</h3>
+        <p>توفير وقود 91 و95 بمعايير أرامكو السعودية.</p>
+      </div>
+      <div class="card">
+        <h3>متاجر داخل المحطة</h3>
+        <p>تسوق من متاجرنا المتنوعة أثناء تعبئة الوقود.</p>
+      </div>
+      <div class="card">
+        <h3>غسيل سيارات</h3>
+        <p>خدمات غسيل حديثة بأفضل المواد والمعدات.</p>
+      </div>
     </div>
   </section>
 
-  <section id="contact">
-    <h2 class="contact-title">اتصل بنا</h2>
-    <p class="contact-desc">أرسل استفسارك أو تواصلك وسنرد عليك بأقرب وقت.</p>
-    <form>
-      <input type="text" placeholder="الاسم الكامل / Full Name" required />
-      <input type="email" placeholder="البريد الإلكتروني / Email" required />
-      <textarea rows="5" placeholder="رسالتك / Your Message" required></textarea>
-      <button type="submit">إرسال / Send</button>
-    </form>
+  <!-- Stations -->
+  <section id="stations">
+    <h2>محطاتنا</h2>
+    <div class="stations">
+      <div class="card">
+        <h3>محطة جدة الرئيسية</h3>
+        <p>طريق مكة – جدة.</p>
+      </div>
+      <div class="card">
+        <h3>محطة شمال جدة</h3>
+        <p>طريق الملك عبد العزيز.</p>
+      </div>
+      <div class="card">
+        <h3>محطة خارج جدة</h3>
+        <p>طريق الطائف – الرياض.</p>
+      </div>
+    </div>
   </section>
-</main>
 
-<footer>
-  <p>© 2025 إمداد نفط - جميع الحقوق محفوظة</p>
-</footer>
+  <!-- Contact -->
+  <section id="contact">
+    <h2>اتصل بنا</h2>
+    <p style="text-align:center;">
+      📍 جدة – المملكة العربية السعودية <br>
+      📞 0555 123 456 <br>
+      ✉️ info@imdadnaft.com
+    </p>
+  </section>
 
-<script>
-  let currentLang = 'ar';
-
-  const content = {
-    ar: {
-      nav: ['الرئيسية', 'من نحن', 'الخدمات', 'اتصل بنا'],
-      heroTitle: 'مرحباً بكم في إمداد نفط',
-      heroDesc: 'محطات وقود حديثة داخل جدة وخارجها',
-      aboutTitle: 'من نحن',
-      aboutDesc: 'شركة إمداد نفط هي شركة سعودية رائدة في تشغيل وتطوير محطات الوقود داخل جدة وخارجها. نسعى لتقديم تجربة وقود متكاملة بمعايير جودة عالية وأمان وخدمة عملاء متميزة.',
-      servicesTitle: 'الخدمات',
-      services: ['تعبئة الوقود', 'صيانة سريعة', 'ميني ماركت', 'دورات مياه نظيفة', 'مصلى', 'شحن كهربائي (إن وجد)'],
-      contactTitle: 'اتصل بنا',
-      contactDesc: 'أرسل استفسارك أو تواصلك وسنرد عليك بأقرب وقت.',
-      langBtn: 'English'
-    },
-    en: {
-      nav: ['Home', 'About', 'Services', 'Contact'],
-      heroTitle: 'Welcome to Emdad Naft',
-      heroDesc: 'Modern fuel stations in Jeddah and beyond',
-      aboutTitle: 'About Us',
-      aboutDesc: 'Emdad Naft is a Saudi company specialized in operating and developing fuel stations in and outside Jeddah. We aim to deliver a high-quality, safe, and professional fuel experience.',
-      servicesTitle: 'Our Services',
-      services: ['Fuel Filling', 'Quick Maintenance', 'Mini Market', 'Clean Restrooms', 'Prayer Area', 'EV Charging (if available)'],
-      contactTitle: 'Contact Us',
-      contactDesc: 'Send us your message and we will respond shortly.',
-      langBtn: 'العربية'
-    }
-  };
-
-  function toggleLang() {
-    currentLang = currentLang === 'ar' ? 'en' : 'ar';
-    const lang = content[currentLang];
-
-    document.body.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
-    document.documentElement.lang = currentLang;
-
-    document.querySelector('.nav-home').textContent = lang.nav[0];
-    document.querySelector('.nav-about').textContent = lang.nav[1];
-    document.querySelector('.nav-services').textContent = lang.nav[2];
-    document.querySelector('.nav-contact').textContent = lang.nav[3];
-
-    document.querySelector('.hero-title').textContent = lang.heroTitle;
-    document.querySelector('.hero-desc').textContent = lang.heroDesc;
-    document.querySelector('.about-title').textContent = lang.aboutTitle;
-    document.querySelector('.about-desc').textContent = lang.aboutDesc;
-    document.querySelector('.services-title').textContent = lang.servicesTitle;
-
-    document.querySelectorAll('.service-box').forEach((el, i) => {
-      el.textContent = lang.services[i] || '';
-    });
-
-    document.querySelector('.contact-title').textContent = lang.contactTitle;
-    document.querySelector('.contact-desc').textContent = lang.contactDesc;
-    document.querySelector('.lang-switch').textContent = lang.langBtn;
-  }
-</script>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 جميع الحقوق محفوظة – شركة إمداد نفط</p>
+  </footer>
 
 </body>
 </html>
